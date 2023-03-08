@@ -14,7 +14,7 @@ jobs:
       - run: echo "This is job1, running in a Docker container"
   job2:
     container:
-      image: harshith114/linuxkubeaudit:latest
+      image: harshith114/linuxkubeaudit3:latest
     runs-on: ubuntu-latest
     steps:
       - run: echo "This is job2, running in my custom Docker image"
