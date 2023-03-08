@@ -1,0 +1,20 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: publicrepo
+spec:
+  selector:
+    matchLabels:
+      app:  publicrepo
+  replicas: 1
+  template:
+    metadata:
+      labels:
+        app:  publicrepo
+    spec:
+      containers:
+      - name: publicrepo
+        image: mysql:latest
+        imagePullPolicy: Always
+        ports:
+        - containerPort: 31011
