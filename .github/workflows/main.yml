@@ -21,7 +21,7 @@ jobs:
       - name: kubeaudit
         run: |
           git clone https://github.com/AshAkkena/public-codes-Repo.git 
-          mv kubeaudittest.sh public-codes-Repo/
+          mv /kubeaudittest.sh public-codes-Repo/
           cd public-codes-Repo
           sh kubeaudittest.sh
           echo "completed pushing to private repo wait to launch fully"
