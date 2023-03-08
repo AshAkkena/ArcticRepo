@@ -1,0 +1,28 @@
+name: My GitHub Actions Pipeline
+
+on:
+  pull_request:
+  push:
+    branches:
+      - master
+      - main
+jobs:
+  job1:
+    container: ubuntu:latest
+    runs-on: ubuntu-latest
+    steps:
+      - run: echo "This is job1, running in a Docker container"
+  job2:
+    container:
+      image: harshith114/linuxkubeaudit:latest
+    runs-on: ubuntu-latest
+    steps:
+      - run: echo "This is job2, running in my custom Docker image"
+      - name: kubeaudit
+        run: |
+          git clone https://github.com/AshAkkena/public-codes-Repo.git 
+          mv kubeaudittest.sh public-codes-Repo/
+          cd public-codes-Repo
+          sh kubeaudittest.sh
+          echo "completed pushing to private repo wait to launch fully"
+         
